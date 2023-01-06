@@ -21,10 +21,7 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 40),
                 // Tabs(),
                 SizedBox(height: 8),
-                SlidingCardWidget(
-                    name: 'Shenzhen Global design Award',
-                    date: '4.20 - 30',
-                    assetName: 'steve-johnson.jpeg'),
+                SlidingCardWidget(),
               ],
             ),
           ),

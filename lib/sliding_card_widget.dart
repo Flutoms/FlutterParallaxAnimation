@@ -1,17 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_paralax_animation/closed_bottom_sheet_widget.dart';
 
 class SlidingCardWidget extends StatefulWidget {
-  final String name;
-  final String date;
-  final String assetName;
-
-  const SlidingCardWidget(
-      {super.key,
-      required this.name,
-      required this.date,
-      required this.assetName});
+  const SlidingCardWidget({super.key});
 
   @override
   State<SlidingCardWidget> createState() => _SlidingCardWidgetState();
@@ -43,11 +36,11 @@ class _SlidingCardWidgetState extends State<SlidingCardWidget> {
               height: MediaQuery.of(context).size.height * 0.55,
               child: PageView.builder(
                   controller: pageController,
-                  itemCount: 4,
+                  itemCount: events.length,
                   itemBuilder: (context, index) => CardWidget(
-                      name: widget.name,
-                      assetName: widget.assetName,
-                      date: widget.date,
+                      name: 'Shenzhen Global design Award',
+                      assetName: events[index].assetName,
+                      date: events[index].date,
                       pageOffset: pageOffset - index)),
             ));
   }
