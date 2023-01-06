@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'exhibition_bottom_sheet.dart';
 import 'sliding_card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          // ExhibitionBottomSheet(), //use this or ScrollableExhibitionSheet
+          const ExhibitionBottomSheet(),
         ],
       ),
     );
