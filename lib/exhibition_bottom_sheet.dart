@@ -39,10 +39,11 @@ class ExhibitionBottomSheetState extends State<ExhibitionBottomSheet>
 
   double get iconSize => lerp(iconStartSize, iconEndSize);
 
-  double iconTopMargin(int index) =>
-      lerp(iconStartMarginTop,
-          iconEndMarginTop + index * (iconsVerticalSpacing + iconEndSize)) +
-      headerTopMargin;
+  double iconTopMargin(int index) {
+    return lerp(iconStartMarginTop,
+            iconEndMarginTop + index * (iconsVerticalSpacing + iconEndSize)) +
+        headerTopMargin;
+  }
 
   double iconLeftMargin(int index) =>
       lerp(index * (iconsHorizontalSpacing + iconStartSize), 0);
@@ -62,7 +63,7 @@ class ExhibitionBottomSheetState extends State<ExhibitionBottomSheet>
     super.dispose();
   }
 
-  // Controls bottomSheet
+  // Controls dynamic sizing
   double lerp(double min, double max) =>
       lerpDouble(min, max, _controller.value)!;
 
@@ -91,7 +92,7 @@ class ExhibitionBottomSheetState extends State<ExhibitionBottomSheet>
                   const MenuButton(),
                   SheetHeader(
                       fontSize: headerFontSize, topMargin: headerTopMargin),
-                  // for (Event event in events) _buildFullItem(event),
+                  for (Event event in events) _buildFullItem(event),
                   for (Event event in events) _buildHalfItem(event),
                 ],
               ),
